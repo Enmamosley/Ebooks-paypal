@@ -1,7 +1,7 @@
 # Ebooks - Paypal
 
 
-## 🚀 EstructurA
+## 🚀 Estructura
 
 ```text
 /
