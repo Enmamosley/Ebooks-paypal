@@ -1,0 +1,21 @@
+{
+  "name": "astro-app",
+  "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/astro"
+    }
+  ],
+  "functions": {
+    "_render": {
+      "runtime": "nodejs20.x"
+    },
+    "api/**/*": {
+      "runtime": "nodejs20.x" 
+  },
+  "env": {
+    "NODE_ENV": "production"
+  }
+
+}
