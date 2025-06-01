@@ -21,5 +21,5 @@ export default defineConfig({
       }
     }
   },
-  adapter: vercel({ edge: true }) // 👈 Solución aquí
+  adapter: vercel({}) // 👈 Solución aquí
 });
