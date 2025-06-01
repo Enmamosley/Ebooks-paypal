@@ -1,21 +1,28 @@
 // @ts-check
-import { defineConfig, envField } from 'astro/config';
-
+import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
-
 import vercel from '@astrojs/vercel/serverless';
 
 // https://astro.build/config
 export default defineConfig({
-  output: 'server',
-  integrations: [tailwind()],
+  output: 'server',  // Usar la salida serverless para Vercel
+  integrations: [tailwind()],  // Integración de Tailwind
 
   env: {
     schema: {
-      SHOW_BUY_BUTTON: envField.boolean({ default: true, context: 'server', access: 'public' }),
-      SCORE_API_ENDPOINT: envField.string({ context: 'server', access: 'public' }),
+      SHOW_BUY_BUTTON: {
+        default: true,
+        type: 'boolean',
+        context: 'server',
+        access: 'public'
+      },
+      SCORE_API_ENDPOINT: {
+        type: 'string',
+        context: 'server',
+        access: 'public'
+      }
     }
   },
 
-  adapter: vercel()
+  adapter: vercel()  // Configuración para usar el adaptador serverless de Vercel
 });
