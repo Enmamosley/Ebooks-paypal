@@ -1,5 +1,4 @@
 {
-  "name": "astro-app",
   "version": 2,
   "builds": [
     {
@@ -12,10 +11,10 @@
       "runtime": "nodejs20.x"
     },
     "api/**/*": {
-      "runtime": "nodejs20.x" 
+      "runtime": "nodejs20.x"
+    }
   },
   "env": {
     "NODE_ENV": "production"
   }
-
 }
