@@ -3,12 +3,9 @@ import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 import vercel from '@astrojs/vercel';
 
-
-// https://astro.build/config
 export default defineConfig({
-  output: 'server',  // Usar la salida serverless para Vercel
-  integrations: [tailwind()],  // Integración de Tailwind
-
+  output: 'server',
+  integrations: [tailwind()],
   env: {
     schema: {
       SHOW_BUY_BUTTON: {
@@ -24,6 +21,5 @@ export default defineConfig({
       }
     }
   },
-
-  adapter: vercel()  // Configuración para usar el adaptador serverless de Vercel
+  adapter: vercel({ edge: true }) // 👈 Solución aquí
 });
