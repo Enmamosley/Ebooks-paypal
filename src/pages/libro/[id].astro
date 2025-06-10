@@ -25,21 +25,18 @@ export const prerender = true
 ---
 
 <Layout title={`${title} - Dev Books`}>
-  <div class="flex gap-12">
-    <aside class="flex flex-col items-center gap-4">
+  <div class="w-full max-w-full overflow-x-hidden flex flex-col md:flex-row gap-6 md:gap-12 px-2 sm:px-4 md:px-0">
+    <aside class="flex flex-col items-center gap-4 w-full md:w-80">
       <a href='/' class="hover:underline opacity-70">← Volver atrás</a>
-      <img transition:name={`img-${slug}`} class="rounded w-72 h-auto" src={`/${img}`} alt={title} />
-      
+      <img transition:name={`img-${slug}`} class="rounded w-full max-w-xs md:w-72 h-auto" src={`/${img}`} alt={title} />
       <BookScore server:defer id={slug}>
         <span slot="fallback" class="text-xs opacity-70">Cargando puntuación...</span>
       </BookScore>
-
       {
         SHOW_BUY_BUTTON && <BuyButton server:defer buy={buy} />
       }
     </aside>
-
-    <main class="max-w-3xl">
+    <main class="w-full max-w-3xl md:flex-1">
       <h1 transition:name={`title-${slug}`} class="text-4xl font-bold mb-4">{title}</h1>
       <div class="prose prose-invert">
         <Content />
@@ -47,3 +44,4 @@ export const prerender = true
     </main>
   </div>
 </Layout>
+
