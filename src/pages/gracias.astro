@@ -1,0 +1,22 @@
+---
+import Layout from '../layouts/Layout.astro'; // Asegúrate de que la ruta del layout sea correcta
+---
+
+<Layout title="Gracias por tu compra">
+  <main class="flex flex-col items-center justify-center min-h-screen text-white bg-[#0f0f12] text-center px-6">
+    <h1 class="text-center text-4xl sm:text-5xl md:text-7xl font-extrabold mb-16 break-words">
+🎉 Gracias <span class="block">por tu compra!</span>
+</h1>
+    <p class="text-xl mb-8">Pronto te haremos llegar la información por correo electrónico.</p>
+
+    <div class="flex gap-4">
+      <a 
+        href="/" 
+        class="bg-white text-black px-6 py-3 rounded-xl font-semibold hover:bg-gray-200 transition"
+      >
+        Volver al inicio
+      </a>
+
+    </div>
+  </main>
+</Layout>
